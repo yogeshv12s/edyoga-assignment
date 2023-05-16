@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background: #f2f2f2;
+}
+nav{
+  background: #f5f6f8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 100px;
+}
+nav .logo{
+  color: #0f0d0d;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+nav .nav-items{
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+nav .nav-items li{
+  list-style: none;
+  padding: 0 15px;
+}
+nav .nav-items li a{
+  color: #110f0f;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav .nav-items li a:hover{
+  color: #ff3d00;
+}
+nav form{
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: #f0f1f3;
+  min-width: 18%!important;
+  border-radius: 2px;
+  border: 1px solid rgba(155,155,155,0.2);
+}
+nav form .search-data{
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav form button{
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav form button:hover{
+  background: #e7e5e4;
+}
+nav .menu-icon,
+nav .cancel-icon,
+nav .search-icon{
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #0b0b0b;
+  cursor: pointer;
+  display: none;
+}
+nav .menu-icon span,
+nav .cancel-icon,
+nav .search-icon{
+  display: none;
+}
+@media (max-width: 1245px) {
+  nav{
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1140px){
+  nav{
+    padding: 0px;
+  }
+  nav .logo{
+    flex: 2;
+    text-align: center;
+  }
+  nav .nav-items{
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background: #14181f;
+    display: inline-block;
+    transition: left 0.3s ease;
+  }
+  nav .nav-items.active{
+    left: 0px;
+  }
+  nav .nav-items li{
+    line-height: 40px;
+    margin: 30px 0;
+  }
+  nav .nav-items li a{
+    font-size: 20px;
+  }
+  nav form{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  nav form.active{
+    top: 95px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav form:before{
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border: 10px solid transparent;
+    border-bottom-color: #1e232b;
+    margin: -20px 0 0;
+  }
+  nav form:after{
+    position: absolute;
+    content: '';
+    height: 60px;
+    padding: 2px;
+    background: #1e232b;
+    border-radius: 2px;
+    min-width: calc(100% + 20px);
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  nav .menu-icon{
+    display: block;
+  }
+  nav .search-icon,
+  nav .menu-icon span{
+    display: block;
+  }
+  nav .menu-icon span.hide,
+  nav .search-icon.hide{
+    display: none;
+  }
+  nav .cancel-icon.show{
+    display: block;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.content header{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .text{
+  font-size: 30px;
+  font-weight: 700;
+}
+.space{
+  margin: 10px 0;
+}
+nav .logo.space{
+  color: rgb(249, 246, 246);
+  padding: 0 5px 0 0;
+}
+@media (max-width: 980px){
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon{
+    margin: 0 20px;
+  }
+  nav form{
+    right: 30px;
+  }
+}
+@media (max-width: 350px){
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon{
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content header{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .text{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .space{
+  margin: 10px 0;
+}
+
+         
+.btn{
+    background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 40px;
+    display: block;
+    border: none;
+  }
+input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+  }
+  section{
+    height: 700px;
+    width: auto;
+    background:url("https://static.vecteezy.com/system/resources/previews/002/536/581/original/dark-blue-smart-blurred-pattern-elegant-bright-illustration-with-gradient-background-for-cell-phones-vector.jpg");
+  background-size: cover;
+}
+  .nine{
+    color: #0072ff;
+  }
+.head{
+    padding-top: 50px;
+    padding-left: 150px;
+    color: white;
+    font-size: 30px;
+}
+.head2{
+   
+    padding-left: 150px;
+    color: white;
+    font-size: 30px;
+}
+.wrapper {
+    min-height: 100vh;
+    color: #000;
+    font-family: 'Muli', sans-serif;
+    font-size: 1rem;
+    background-color: #F1E8E6;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+    max-width: 768px;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    -webkit-box-shadow: 0px 17px 34px -20px #f55951;
+            box-shadow: 0px 17px 34px -20px #f55951;
+  }
+  
+  
+  .text {
+    font-size: 0.9rem;
+    width: 90%;
+    text-align: center;
+  }
+  .eight{
+    text-decoration: line-through;
+    text-decoration-color: red ;
+  }
+  .container {
+    display: flex;
+    margin-left: 1000px;
+    width: 450px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    background-color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+   
+}
+
+.fr{
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+.chb {
+  visibility: hidden;
+}
+
+.chb + label {
+  position: relative;
+  padding-left: 15px;
+}
+
+.chb-1 + label::before {
+  position: absolute;
+  
+  width: 16px;
+  height: 16px;
+  background-color: #16a085;
+  border-radius: 3px;
+  content: "";
+  
+  top: 4px;
+  left: -20px;
+  padding-bottom: 5px;
+  
+  
+  font-size: 11px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+
+
+.chb-1:checked + label::before {
+  color: white;
+  content: '\2713';
+}
+
+.sub{
+  padding-left: 200px;
+}
+.button-container{
+  display: flex;
+  
+}
+
+
+.pay {
+  --width: 150px;
+  --timing: 2s;
+  border: 0;
+  width: var(--width);
+ padding: 20px;
+ margin-left: 50px;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  background: rgb(64, 192, 87);
+  transition: all 0.2s;
+  border-radius: 3px;
+  
+}
+
+.can {
+  --width: 150px;
+  --timing: 2s;
+  border: 0;
+  width: var(--width);
+ padding: 20px;
+  
+ 
+  color: #0f0e0e;
+  font-weight: bold;
+  font-size: 1em;
+  background: rgb(216, 220, 217);
+  transition: all 0.2s;
+  border-radius: 3px;
+}
+
+
+.pay:hover {
+  background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
+  animation: var(--timing) linear dance6123 infinite;
+  transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+  to {
+    background-position: var(--width);
+  }
+}
+.razer{
+  margin-top: 30px;
+}
